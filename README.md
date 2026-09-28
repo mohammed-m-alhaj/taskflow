@@ -1,11 +1,11 @@
-﻿<div align="center">
+<div align="center">
 
 <img src="screenshots/hero.jpg" alt="TaskFlow — تطبيق إدارة المهام والإنتاجية الذكي" width="100%"/>
 
 <br/><br/>
 
-# ⚡ TaskFlow — تطبيق إدارة المهام والإنتاجية الذكي
-### تطبيق Full-Stack عربي متكامل — يعمل بدون إنترنت (Offline-First) — مدعوم بذكاء Google Gemini الاصطناعي
+<h1>⚡ TaskFlow</h1>
+<h3>تطبيق إدارة المهام والإنتاجية الذكي — عربي كامل — مدعوم بالذكاء الاصطناعي — Offline-First</h3>
 
 <br/>
 
@@ -264,7 +264,8 @@
 
 ---
 
-### 1. ⚙️ إعداد وتشغيل خادم FastAPI
+<details>
+<summary><b>⚙️ 1. إعداد وتشغيل خادم FastAPI</b> — اضغط لعرض الخطوات والأوامر</summary>
 
 ```bash
 # 1. الدخول إلى مجلد الباك إند
@@ -291,9 +292,10 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 > - Swagger UI: `http://localhost:8000/docs`
 > - ReDoc UI: `http://localhost:8000/redoc`
 
----
+</details>
 
-### 2. 📱 إعداد وتشغيل تطبيق Flutter
+<details>
+<summary><b>📱 2. إعداد وتشغيل تطبيق Flutter</b> — اضغط لعرض الخطوات والأوامر</summary>
 
 ```bash
 # 1. الانتقال للمجلد الرئيسي
@@ -310,15 +312,18 @@ flutter build apk --split-per-abi   # للنسخة الخفيفة المحسنة
 flutter build apk --release          # للنسخة الشاملة
 ```
 
----
+</details>
 
-### 3. 🤖 تفعيل Gemini AI في التطبيق
+<details>
+<summary><b>🤖 3. تفعيل Gemini AI في التطبيق</b> — اضغط لعرض الخطوات</summary>
 
 1. احصل على مفتاح API مجاني من [Google AI Studio](https://aistudio.google.com/app/apikey).
 2. افتح تطبيق **TaskFlow** في هاتفك أو المحاكي.
 3. توجه إلى **الإعدادات ← مفتاح الذكاء الاصطناعي (AI Key)**.
 4. الصق المفتاح واضغط **حفظ**.
 5. *ملاحظة:* إذا لم تقم بإدخال مفتاح، سيواصل التطبيق العمل بسلاسة عبر **المحرك الذكي المحلي الاحتياطي**.
+
+</details>
 
 ---
 
