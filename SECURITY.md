@@ -12,7 +12,7 @@ We take the security and privacy of TaskFlow users seriously.
 
 If you discover a security vulnerability:
 1. **Do not** disclose it publicly via GitHub issues.
-2. Please send an email directly to i.mohammed.alhaj@gmail.com with:
+2. Please send an email directly to ai.mohammed.alhaj@gmail.com with:
    - A description of the vulnerability.
    - Exact steps or script to reproduce the issue.
    - Potential impact.
