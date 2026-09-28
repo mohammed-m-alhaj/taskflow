@@ -1,16 +1,17 @@
-<div align="center">
+﻿<div align="center">
 
-<img src="screenshots/hero.jpg" alt="TaskFlow — تطبيق إدارة المهام والإنتاجية الذكي" width="100%"/>
+<img src="screenshots/hero.jpg" alt="TaskFlow — Intelligent Task & Productivity Manager" width="100%"/>
 
 <br/><br/>
 
 <h1>⚡ TaskFlow</h1>
-<h3>تطبيق إدارة المهام والإنتاجية الذكي — عربي كامل — مدعوم بالذكاء الاصطناعي — Offline-First</h3>
+<h3>Intelligent, Offline-First Task & Productivity Manager powered by Google Gemini AI & FastAPI</h3>
 
 <br/>
 
-[![Download APK](https://img.shields.io/badge/⬇️_تحميل_التطبيق-APK_مباشر-2563EB?style=for-the-badge&logo=android&logoColor=white)](https://github.com/mohammed-m-alhaj/taskflow/releases/latest)
-[![Stars](https://img.shields.io/github/stars/mohammed-m-alhaj/taskflow?style=for-the-badge&color=yellow&label=⭐_النجوم)](https://github.com/mohammed-m-alhaj/taskflow/stargazers)
+[![Download APK](https://img.shields.io/badge/⬇️_Download-APK_Direct-2563EB?style=for-the-badge&logo=android&logoColor=white)](https://github.com/mohammed-m-alhaj/taskflow/releases/latest)
+[![Stars](https://img.shields.io/github/stars/mohammed-m-alhaj/taskflow?style=for-the-badge&color=yellow&label=⭐_Stars)](https://github.com/mohammed-m-alhaj/taskflow/stargazers)
+[![Arabic Version](https://img.shields.io/badge/العربية-README--AR.md-059669?style=for-the-badge)](README-AR.md)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
@@ -20,115 +21,111 @@
 
 <br/>
 
-**نظّم أهدافك، قسّم مشاريعك لمهام تنفيذية، وتابع إنجازك اليومي بسلاسة فائقة — سواء كنت متصلاً بالإنترنت أو في وضع الأوفلاين التام.**
+**Organize goals, break complex projects into actionable steps, and track daily progress effortlessly — online or completely offline.**
 
 <br/>
 
-[📱 تحميل التطبيق](#-تحميل-التطبيق-مباشرة-android) •
-[✨ المميزات الرئيسية](#-المميزات-الرئيسية) •
-[🤖 مساعد الذكاء الاصطناعي](#1--مساعد-الذكاء-الاصطناعي-ai-task-assistant) •
-[🏛️ المعمارية الهندسية](#-المعمارية-الهندسية-والقرارات-التقنية-architecture) •
-[🔌 نقاط الـ API](#-دليل-نقاط-النهاية-للـ-api-restful-endpoints) •
-[🚀 التشغيل المحلي](#-التشغيل-المحلي-quick-start) •
-[💼 للمقابلات التقنية](#-دليل-المقابلات-التقنية-technical-interview-highlights)
+[📱 Download](#-download-apk-android) •
+[✨ Key Features](#-key-features) •
+[🤖 AI Assistant](#1--hybrid-ai-task-planner-gemini--local-nlp) •
+[🏛️ Architecture](#-system-architecture--tech-stack) •
+[🔌 API Endpoints](#-restful-api-specification) •
+[🚀 Quick Start](#-quick-start-local-setup) •
+[💼 For Tech Interviews](#-engineering-highlights--interview-cheat-sheet)
 
 </div>
 
 ---
 
-## 🎯 نظرة عامة على المشروع (Executive Summary)
+## 🎯 Overview
 
-**TaskFlow** هو تطبيق إنتاجية وإدارة مهام حديث مبني وفق معمارية برمجية إنتاجية احترافية (**Production-Grade Full-Stack Architecture**). تم تصميمه خصيصاً ليحل معضلة شائعة في تطبيقات الإنتاجية العربية: **الاعتماد الكلي على الاتصال السحابي**.
+**TaskFlow** is a modern, production-grade **Full-Stack productivity application** tailored for native Arabic RTL support with an **Offline-First architecture**. 
 
-يعتمد التطبيق نمط **أولوية العمل دون إنترنت (Offline-First)**؛ حيث تحفظ جميع المهام والتصنيفات والتذكيرات محلياً في قاعدة بيانات **SQLite** فائقة السرعة على الهاتف، مع توفير خادم سحابي مبني بـ **FastAPI** وقاعدة بيانات **PostgreSQL** للمزامنة والمصادقة وتعدد الأجهزة.
+Unlike standard to-do applications that fail when disconnected from the internet, TaskFlow persists all tasks, categories, and reminders directly into a high-performance local **SQLite** database. When online, it seamlessly syncs with a **FastAPI** backend backed by **PostgreSQL** with secure **JWT** authentication.
 
-### لماذا يعتبر TaskFlow نموذجاً برمجياً مميزاً؟
-- 🇸🇦 **تجربة عربية أصلية بالكامل**: اتجاه كامل من اليمين لليسار (RTL Native)، مع خط طباعي حديث عالي المقروئية (**Thmanyah Sans**).
-- 🧠 **محرك ذكاء اصطناعي ثنائي (Hybrid AI Engine)**: يربط مع **Google Gemini API** لتحليل الأهداف وتوليد خطط عمل تنفيذية، ويحتوي على **محرك NLP محلي ذكي** مدمج يعمل تلقائياً دون إنترنت.
-- ⚡ **أداء عالي واستهلاك منخفض للموارد**: واجهات Material 3 خفيفة، وتأثيرات Shimmer سلسة، واستجابة فورية دون شاشات انتظار بيضاء.
-- 🛡️ **أمان متكامل**: تشفير لكلمات المرور عبر خوارزمية **Bcrypt** وإصدار توكنات وصول مشفرة عبر **JWT**.
-
----
-
-## 📲 تحميل التطبيق مباشرة (Android)
-
-> **متوافق مع جميع أجهزة أندرويد بنظام Android 6.0 (API 23) فما فوق.**
-
-| النسخة | المعمارية المدعومة | الحجم | متى تختارها؟ |
-|:-------|:-------------------:|:-----:|:-------------|
-| [⬇️ **النسخة الخفيفة (Optimized)**](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Mobile_Optimized.apk) | **ARM64-v8a** | **~19.4 MB** | **الخيار الموصى به** — لمعظم الهواتف الحديثة، خفيفة وسريعة التثبيت |
-| [⬇️ **النسخة الشاملة (Universal)**](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Universal.apk) | **Universal (All)** | **~54.5 MB** | للأجهزة الأقدم أو التي تعمل بمعالجات ARMv7 أو x86_64 |
-
-### خطوات التثبيت في 30 ثانية:
-1. اضغط على رابط النسخة المناسبة لجهازك أعلاه لبدء التحميل.
-2. افتح الملف من مجلد التنزيلات (Downloads) في جهازك.
-3. اضغط على **تثبيت (Install)** — في حال ظهر تحذير أمني اضغط **السماح بالتثبيت من هذا المصدر**.
-4. افتح **TaskFlow** وابدأ تنظيم يومك فوراً بدون أي تعقيد 🚀
+### Why TaskFlow Stands Out
+- 🇸🇦 **Native Arabic RTL Design**: Built from the ground up for Arabic typography (**Thmanyah Sans**) and seamless RTL layout across all 12 screens.
+- 🧠 **Dual-Engine AI Task Decomposition**: Powered by **Google Gemini API** for structured JSON task breakdown, with an automated **Local Rule-Based NLP Fallback Engine** that works with zero internet connectivity.
+- ⚡ **Zero-Latency Offline-First**: Immediate UI response with optimistic local storage and background synchronization.
+- 🛡️ **Enterprise-Grade Security**: Bcrypt password hashing and stateless JWT bearer tokens with expiration handling.
 
 ---
 
-## ✨ المميزات الرئيسية
+## 📲 Download APK (Android)
+
+> **Supports Android 6.0 (API 23) and higher.**
+
+| Variant | Target Architecture | Size | Recommendation |
+|:-------|:-------------------:|:----:|:---------------|
+| [⬇️ **Optimized Build**](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Mobile_Optimized.apk) | **ARM64-v8a** | **~19.4 MB** | **Recommended** — for 95%+ of modern smartphones (smaller size, fast install) |
+| [⬇️ **Universal Build**](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Universal.apk) | **Universal (All)** | **~54.5 MB** | For older devices or ARMv7/x86_64 architectures |
+
+#### Installation in 3 Steps:
+1. Download the APK file matching your device above.
+2. Open the downloaded file from your file manager and tap **Install**.
+3. If prompted, enable **"Allow installation from this source"** in device security settings, then launch **TaskFlow** 🚀
+
+---
+
+## ✨ Key Features
 
 <div align="center">
-  <img src="screenshots/features.jpg" alt="مميزات TaskFlow الرئيسية" width="100%"/>
+  <img src="screenshots/features.jpg" alt="TaskFlow Core Features" width="100%"/>
 </div>
 
 <br/>
 
-### 1. 🤖 مساعد الذكاء الاصطناعي (AI Task Assistant)
-حوّل أي فكرة غير مرتبة أو مشروع ضخم إلى خطة عمل تنفيذية مجدولة خلال ثوانٍ.
-- **تحديد ذكي**: يستخرج تلقائياً عنوان المهمة، التصنيف الملائم، مستوى الأولوية (منخفضة/متوسطة/عالية/طارئة)، وتاريخ الاستحقاق.
-- **تفتيت المهام (Subtasks Decomposition)**: يفكك الهدف الكبير إلى قائمة إجراءات صغيرة قابلة للإنجاز.
-- **إضافة بنقرة واحدة**: زر مخصص يضيف الخطة المولدة مباشرة إلى قاعدة بيانات التطبيق.
-- **دعم المحركين**: يعمل عبر سحابة **Google Gemini** عند وجود اتصال، أو عبر **المحرك المحلي المدمج** عند انعدام الشبكة.
+### 1. 🤖 Hybrid AI Task Planner (Gemini + Local NLP)
+Type any goal or unstructured thought in natural language (Arabic or English), and the AI instantly generates a structured action plan:
+- Automatically detects title, category, priority level, and due date.
+- Decomposes the high-level goal into an actionable checklist of subtasks.
+- **One-Click Import**: Add the generated plan directly to your task list.
+- **Offline Resilience**: Automatically falls back to the embedded local NLP engine when offline.
 
 ```
-💬 مثال تطبيقي من داخل التطبيق:
+💬 AI Interaction Demo:
 
-أنت تكتب:  "أريد الاستعداد لاختبار الحوسبة السحابية يوم الخميس القادم"
+User Input:
+  "I want to prepare for my Cloud Computing final exam next Thursday"
 
-رد المساعد الفوري:
-  📌 العنوان: الاستعداد لاختبار الحوسبة السحابية
-  🏷️ التصنيف: دراسة
-  ⚡ الأولوية: عالية جداً | 📅 الاستحقاق: الخميس القادم
+TaskFlow AI Output:
+  📌 Title: Prepare for Cloud Computing Final Exam
+  🏷️ Category: Study
+  ⚡ Priority: High | 📅 Due Date: Next Thursday
   
-  قائمة المهام الفرعية المقترحة:
-  ├── [ ] مراجعة ملخص معماريات الخدمات (IaaS, PaaS, SaaS)
-  ├── [ ] حل النماذج والاختبارات السابقة للفصول 1 إلى 4
-  ├── [ ] تلخيص مفاهيم الأمان والشبكات الافتراضية (VPC & IAM)
-  └── [ ] مراجعة شاملة ليلة الاختبار وأخذ قسط كافٍ من النوم
+  Actionable Subtasks:
+  ├── [ ] Review service architectures summary (IaaS, PaaS, SaaS)
+  ├── [ ] Solve practice exams and past questions for chapters 1-4
+  ├── [ ] Summarize VPC, security groups, and IAM policies
+  └── [ ] Final comprehensive revision and adequate sleep before exam day
 
-  [ ➕ إضافة الخطة إلى مهامي الآن ]
+  [ ➕ Add Plan Directly to My Tasks ]
 ```
 
-### 2. ⚡ أولوية العمل دون إنترنت (Offline-First SQLite)
-- قاعدة بيانات محلية مدمجة (**SQLite via sqflite**) تخزن كافة الحسابات والمهام والتصنيفات محلياً.
-- تصفح وإضافة وتعديل وحذف المهام بسرعة فائقة ودون انتظار استجابة السيرفر.
+### 2. ⚡ Offline-First Architecture (SQLite)
+- Complete offline capability via **SQLite (sqflite)**. Create, update, toggle, and delete tasks anywhere without network dependency.
 
-### 3. 🔄 خادم سحابي عالي الأداء (FastAPI + PostgreSQL)
-- خادم RESTful API قوي مبني بأحدث معايير **FastAPI** و **SQLAlchemy 2.0**.
-- دعم كامل لقواعد بيانات **PostgreSQL** الإنتاجية مع إدارة العلاقات والروابط العلائقية المتشعبة.
-- مصادقة مستخدمين متقدمة بـ **JWT** وتشفير **Bcrypt**.
+### 3. 🔄 Scalable Cloud Backend (FastAPI + PostgreSQL)
+- High-performance RESTful API built with **FastAPI** and **SQLAlchemy 2.0**.
+- Relational integrity, cascade deletion, and multi-user isolation on **PostgreSQL**.
+- Secure authentication via **JWT** tokens and **Bcrypt** password hashing.
 
-### 4. 📅 تقويم تفاعلي وجدولة ذكية
-- استعراض المهام بحسب الأيام والأسابيع في واجهة تقويم مخصصة.
-- إمكانية جدولة تذكيرات وتنبيهات زمنية دقيقة لكل مهمة.
-- جاهزية لقواعد التكرار التلقائي للمهام الدورية (يومي، أسبوعي، شهري).
+### 4. 📅 Interactive Calendar & Scheduling
+- Visual calendar view mapping tasks to scheduled days.
+- Local and cloud-synced reminders for crucial deadlines.
+- Extensible recurrence engine for recurring daily, weekly, and monthly tasks.
 
-### 5. 🏷️ تصنيفات مخصصة ومهام فرعية
-- تقسيم المهام حسب مجالات الحياة (عمل، دراسة، شخصي، تسوق، لياقة).
-- إمكانية إضافة Checklists متعددة داخل كل مهمة ومتابعة نسبة الإنجاز اللحظية.
+### 5. 🏷️ Custom Categories & Checklists
+- Color-coded categories (Work, Study, Personal, Shopping, Health).
+- Subtasks with instant completion checkboxes and progress tracking.
 
-### 6. 🎨 تصميم بصري متقن (Material 3 & Dark Mode)
-- واجهات متناسقة تدعم الوضع الداكن (Dark Mode) والوضع الفاتح (Light Mode).
-- خط عربي عصري ومقروء (**Thmanyah Sans**).
-- حركات انتقال سلسة وتأثيرات Shimmer أثناء معالجة البيانات.
+### 6. 🎨 Polished Material 3 Experience
+- Automatic Dark Mode and Light Mode support.
+- Modern Arabic font (**Thmanyah Sans**) with shimmer loading states.
 
 ---
 
-## 🏛️ المعمارية الهندسية والقرارات التقنية (Architecture)
-
-تم بناء **TaskFlow** باتباع مبادئ هندسة البرمجيات النظيفة (**Clean Architecture Principles**) لضمان قابلية التوسع والصيانة وسهولة الاختبار.
+## 🏛️ System Architecture & Tech Stack
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────────┐
@@ -156,40 +153,42 @@
 │                              ⚙️ FASTAPI BACKEND                                   │
 │                                                                                   │
 │  Routers & Endpoints:                                                             │
-│  • /auth              ── تسجيل، دخول، جلب بيانات المستخدم الحالي (/me)            │
-│  • /tasks             ── إدارة المهام (CRUD كامل + فلترة بالأحدث)                 │
-│  • /tasks/{id}/subtasks── المهام الفرعية المرتبطة بكل مهمة                        │
-│  • /categories        ── التصنيفات المخصصة لكل مستخدم                             │
-│  • /reminders         ── جدولة التذكيرات الزمنية للمهام                           │
-│  • /users/settings    ── تفضيلات الثيم واللغة والإشعارات                          │
+│  • /auth              ── Register, Login, JWT verification, Current User (/me)    │
+│  • /tasks             ── Full CRUD, Filtering, Ordering                          │
+│  • /tasks/{id}/subtasks── Subtasks bound to parent task with cascade lifecycle    │
+│  • /categories        ── User-isolated custom categories                          │
+│  • /reminders         ── Scheduled time-based reminders                           │
+│  • /users/settings    ── Theme, Language, and Notification preferences            │
 │                                                                                   │
 │  Domain & Persistence Layer:                                                      │
-│  • Pydantic v2        ── التحقق الصارم من صحة الحمولات (Validation Schemas)       │
-│  • SQLAlchemy 2.0 ORM ── إدارة الجداول والعلاقات والعمليات الذرية (Transactions)   │
-│  • Psycopg 3 Driver   ── اتصال مباشر عالي الأداء مع قاعدة PostgreSQL              │
-│  • Database Auto-Init ── فحص وإنشاء قاعدة بيانات "taskflow" والجداول تلقائياً    │
+│  • Pydantic v2        ── Strict payload validation & serialization contracts      │
+│  • SQLAlchemy 2.0 ORM ── Atomic transactions & relational modeling                │
+│  • Psycopg 3 Driver   ── High-throughput binary PostgreSQL connection             │
+│  • Database Auto-Init ── Automated database & table provisioning on startup       │
 └───────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### أبرز التقنيات والمكتبات المستخدمة
+### Technology Breakdown
 
-| الطبقة البرمجية | التقنية المختارة | سبب الاختيار والدور في النظام |
-|:----------------|:-----------------|:------------------------------|
-| **Mobile Core** | **Flutter 3.x / Dart 3** | أداء أصيل (Native Performance)، دعم استثنائي للـ RTL، وسرعة البناء |
-| **State Management**| **Provider 6** | نمط خفيف وفعال يمنع إعادة البناء غير الضرورية (Rebuild Optimization) |
-| **Local Cache & Storage** | **SQLite (sqflite)** | حل محلي متين يضمن العمل بنسبة 100% في وضع عدم الاتصال (Offline-First) |
-| **Network Engine** | **Dio 5** | دعم متقدم للـ Interceptors لإدارة الـ Auth Headers والتعامل الذكي مع انقطاع الشبكة |
-| **Artificial Intelligence** | **Google Gemini 1.5/2.0 API** | فهم عميق ودقيق للغة العربية والقدرة على هيكلة المخرجات بصيغة JSON قابلة للتحليل |
-| **Backend Framework** | **FastAPI** | أسرع أطر عمل بايثون (Asynchronous)، مع توثيق Swagger تلقائي |
-| **ORM & Relational DB** | **SQLAlchemy 2.0 + PostgreSQL** | إدارة علاقات 1:N و 1:1 المتشعبة، مع دعم Cascades والحذف المتسلسل |
-| **Validation Layer** | **Pydantic v2** | أداء فائق في التحقق من البيانات والأنماط (Type Safety) |
-| **Security** | **JWT + Bcrypt (Passlib)** | تشفير قياسي لكلمات المرور وعزل جلسات المستخدمين عبر Stateless Tokens |
+| Component | Technology | Rationale & Responsibility |
+|:----------|:-----------|:---------------------------|
+| **Frontend Framework** | **Flutter 3.x (Dart 3)** | Native 60fps performance, excellent RTL rendering, and cross-platform readiness |
+| **State Management** | **Provider 6** | Lightweight MultiProvider pattern avoiding unnecessary widget tree rebuilds |
+| **Local Database** | **SQLite (sqflite)** | Robust embedded SQL database ensuring zero-latency and 100% offline uptime |
+| **Networking** | **Dio 5** | Interceptors for automated token injection and graceful network failure handling |
+| **Cloud AI** | **Google Gemini API** | High-precision Arabic NLP understanding with structured JSON schema output |
+| **Local AI Engine** | **Rule-Based Matcher** | Deterministic fallback planner when network or API key is unavailable |
+| **Backend Framework** | **FastAPI** | High-throughput asynchronous Python web framework with auto-generated OpenAPI docs |
+| **ORM & Relational DB** | **SQLAlchemy 2.0 + PostgreSQL** | Strict relational integrity with foreign keys and cascade delete rules |
+| **DB Driver** | **Psycopg 3** | Latest PostgreSQL adapter for modern Python applications |
+| **Data Validation** | **Pydantic v2** | Type-safe request/response validation schemas |
+| **Authentication** | **JWT + Bcrypt (Passlib)** | Stateless, secure bearer token architecture |
 
 ---
 
-## 🗄️ المخطط الهيكلي لقاعدة البيانات (Entity Relationship)
+## 🗄️ Database Schema & Entity Relationships
 
-يتطابق المخطط الهيكلي في كل من قاعدة البيانات المحلية (SQLite) والسحابية (PostgreSQL) عبر 8 نماذج علائقية:
+The schema is normalized across both SQLite (client-side) and PostgreSQL (server-side) across 8 core relational entities:
 
 ```sql
 ┌──────────────┐       1:N       ┌──────────────┐       1:N       ┌──────────────┐
@@ -210,203 +209,202 @@
                                                           └──────────────┘
 ```
 
-1. **`users`**: الحسابات الشخصية (الرقم التعريفي، الاسم، البريد، الهاش المشفر).
-2. **`tasks`**: المهام الرئيسية (العنوان، الوصف، الأولوية، الموعد، حالة الإنجاز، والتصنيف المرتبط).
-3. **`subtasks`**: الخطوات الفرعية المربوطة بمفتاح أجنبي `task_id` مع حذف متسلسل (Cascade Delete).
-4. **`categories`**: التصنيفات المخصصة المعزولة لكل مستخدم على حدة.
-5. **`reminders`**: التنبيهات المجدولة بوقت دقيق مرتبطة بالمهمة.
-6. **`recurrence_rules`**: قواعد تكرار المهام (يومي، أسبوعي، شهري).
-7. **`calendar_events`**: الأحداث المستوردة أو المتزامنة مع التقويم.
-8. **`user_settings`**: تفضيلات المستخدم الخاصة (الثيم، اللغة، المنطقة الزمنية).
+1. **`users`**: User identity records (`id`, `name`, `email`, `password_hash`, `created_at`).
+2. **`tasks`**: Master task entity (`title`, `description`, `priority`, `status`, `due_date`, `category_id`, `is_completed`).
+3. **`subtasks`**: Step-by-step checklist items linked to `tasks` via foreign key with `CASCADE` delete.
+4. **`categories`**: User-scoped classification labels with unique color codes.
+5. **`reminders`**: Scheduled time alerts associated with specific tasks.
+6. **`recurrence_rules`**: Frequency rules for repeated tasks (daily, weekly, monthly).
+7. **`calendar_events`**: Date-mapped events synchronized with the calendar module.
+8. **`user_settings`**: 1:1 user preferences (`theme`, `language`, `timezone`, `notifications_enabled`).
 
 ---
 
-## 🔌 دليل نقاط النهاية للـ API (RESTful Endpoints)
+## 🔌 RESTful API Specification
 
-جميع المسارات تتطلب ترويسة `Authorization: Bearer <token>` باستثناء مسارات التسجيل والدخول وفحص الحالة:
+All protected endpoints require an `Authorization: Bearer <token>` header:
 
-| المسار (Endpoint) | الطريقة | الوصف البرمجي |
-|:------------------|:-------:|:--------------|
-| `POST /auth/register` | `POST` | تسجيل حساب جديد وتشفير كلمة المرور عبر Bcrypt |
-| `POST /auth/login` | `POST` | تسجيل الدخول وإرجاع Bearer Access Token |
-| `GET /auth/me` | `GET` | استرجاع بيانات المستخدم الحالي المصدّق |
-| `GET /tasks` | `GET` | استرجاع جميع مهام المستخدم الحالي مرتبة بالأحدث |
-| `POST /tasks` | `POST` | إنشاء مهمة جديدة مع تحديد أولويتها وتصنيفها |
-| `GET /tasks/{id}` | `GET` | جلب تفاصيل مهمة محددة |
-| `PUT /tasks/{id}` | `PUT` | تحديث بيانات مهمة محددة أو تغيير حالتها |
-| `DELETE /tasks/{id}` | `DELETE` | حذف المهمة وكافة المهام الفرعية والتذكيرات المرتبطة بها |
-| `GET /tasks/{id}/subtasks` | `GET` | جلب كافة المهام الفرعية التابعة لمهمة معينة |
-| `POST /tasks/{id}/subtasks` | `POST` | إنشاء مهمة فرعية جديدة داخل المهمة |
-| `PUT /subtasks/{id}` | `PUT` | تحديث عنوان أو حالة إنجاز المهمة الفرعية |
-| `DELETE /subtasks/{id}` | `DELETE` | حذف مهمة فرعية محددة |
-| `GET /categories` | `GET` | جلب تصنيفات المستخدم المخصصة |
-| `POST /categories` | `POST` | إضافة تصنيف جديد |
-| `GET /categories/{id}` | `GET` | جلب تصنيف محدد |
-| `PUT /categories/{id}` | `PUT` | تعديل اسم التصنيف |
-| `DELETE /categories/{id}` | `DELETE` | حذف التصنيف |
-| `GET /reminders` | `GET` | جلب جميع التذكيرات النشطة للمستخدم |
-| `POST /tasks/{id}/reminders` | `POST` | جدولة تذكير زمني لمهمة محددة |
-| `DELETE /reminders/{id}` | `DELETE` | إلغاء أو حذف تذكير محدد |
-| `GET /users/settings` | `GET` | استرجاع إعدادات وتفضيلات المستخدم الحالية |
-| `PUT /users/settings` | `PUT` | تحديث الإعدادات (الثيم، اللغة، الإشعارات) |
-| `GET /health` | `GET` | فحص جاهزية الخادم والاتصال بقاعدة البيانات |
-| `GET /` | `GET` | رسالة ترحيبية وتأكيد تشغيل الخدمة |
+| Endpoint | Method | Description |
+|:---------|:------:|:------------|
+| `POST /auth/register` | `POST` | Register a new user with Bcrypt password hashing |
+| `POST /auth/login` | `POST` | Authenticate and obtain JWT Bearer access token |
+| `GET /auth/me` | `GET` | Retrieve authenticated user profile |
+| `GET /tasks` | `GET` | List all tasks for current user, ordered by creation date |
+| `POST /tasks` | `POST` | Create a new task with priority and optional category |
+| `GET /tasks/{id}` | `GET` | Get details for a specific task |
+| `PUT /tasks/{id}` | `PUT` | Update task fields or toggle completion status |
+| `DELETE /tasks/{id}` | `DELETE` | Delete task and cascade delete its subtasks & reminders |
+| `GET /tasks/{id}/subtasks` | `GET` | List all subtasks for a specific parent task |
+| `POST /tasks/{id}/subtasks` | `POST` | Create a subtask linked to a parent task |
+| `PUT /subtasks/{id}` | `PUT` | Update subtask title or toggle completion |
+| `DELETE /subtasks/{id}` | `DELETE` | Delete a specific subtask |
+| `GET /categories` | `GET` | List all categories created by current user |
+| `POST /categories` | `POST` | Create a new custom category |
+| `GET /categories/{id}` | `GET` | Get details of a single category |
+| `PUT /categories/{id}` | `PUT` | Update category name |
+| `DELETE /categories/{id}` | `DELETE` | Delete category |
+| `GET /reminders` | `GET` | Fetch all upcoming reminders for current user |
+| `POST /tasks/{id}/reminders` | `POST` | Schedule a reminder for a specific task |
+| `DELETE /reminders/{id}` | `DELETE` | Cancel / delete a reminder |
+| `GET /users/settings` | `GET` | Get current user UI and notification preferences |
+| `PUT /users/settings` | `PUT` | Update user settings (theme, language, timezone) |
+| `GET /health` | `GET` | Health check endpoint verifying database connectivity |
+| `GET /` | `GET` | Root greeting and API status confirmation |
 
 ---
 
-## 🚀 التشغيل المحلي (Quick Start)
+## 🚀 Quick Start (Local Setup)
 
-### المتطلبات المسبقة:
-- **Flutter SDK**: الإصدار `3.10` أو أحدث.
-- **Python**: الإصدار `3.9+` (تم اختباره على Python 3.11).
-- **PostgreSQL**: مثبت ويعمل محلياً على المنفذ الافتراضي `5432`.
-- **محرر أكواد**: Android Studio أو Visual Studio Code.
+### Prerequisites
+- **Flutter SDK**: `3.10+` (Dart 3.x)
+- **Python**: `3.9+` (Tested on Python 3.11)
+- **PostgreSQL**: `14+` running locally on port `5432`
 
 ---
 
 <details>
-<summary><b>⚙️ 1. إعداد وتشغيل خادم FastAPI</b> — اضغط لعرض الخطوات والأوامر</summary>
+<summary><b>⚙️ 1. Setup & Run FastAPI Backend</b> — Click to expand</summary>
 
 ```bash
-# 1. الدخول إلى مجلد الباك إند
+# 1. Navigate to the backend directory
 cd Backend
 
-# 2. إنشاء وتفعيل البيئة الافتراضية
+# 2. Create and activate a virtual environment
 python -m venv venv
 
-# نظام ويندوز (PowerShell):
+# Windows (PowerShell):
 venv\Scripts\activate
-# نظام لينكس / ماك:
+# Linux / macOS:
 # source venv/bin/activate
 
-# 3. تثبيت المتطلبات المعتمدة
+# 3. Install verified dependencies
 pip install -r requirements.txt
 
-# 4. تشغيل خادم التطوير
+# 4. Start the development server
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-> **ملاحظة ذكية:** عند تشغيل الخادم لأول مرة، يقوم تلقائياً بإنشاء قاعدة بيانات باسم `taskflow` في PostgreSQL وبناء كافة الجداول دون الحاجة لتنفيذ أوامر SQL يدوياً!
+> **Automatic DB Provisioning:** On launch, the server automatically verifies the PostgreSQL connection, creates the `taskflow` database if it does not exist, and synchronizes all tables.
 >
-> **التوثيق الحي:**
+> **Interactive API Docs:**
 > - Swagger UI: `http://localhost:8000/docs`
 > - ReDoc UI: `http://localhost:8000/redoc`
 
 </details>
 
 <details>
-<summary><b>📱 2. إعداد وتشغيل تطبيق Flutter</b> — اضغط لعرض الخطوات والأوامر</summary>
+<summary><b>📱 2. Setup & Run Flutter Client</b> — Click to expand</summary>
 
 ```bash
-# 1. الانتقال للمجلد الرئيسي
+# 1. Return to project root
 cd ..
 
-# 2. تحميل الحزم والمكتبات
+# 2. Install Flutter packages
 flutter pub get
 
-# 3. تشغيل التطبيق على محاكي أو جهاز متصل
+# 3. Run on connected device or emulator
 flutter run
 
-# 4. بناء نسخة الإنتاج (Production APK):
-flutter build apk --split-per-abi   # للنسخة الخفيفة المحسنة
-flutter build apk --release          # للنسخة الشاملة
+# 4. Build release APKs:
+flutter build apk --split-per-abi   # Lightweight optimized APK
+flutter build apk --release          # Universal APK
 ```
 
 </details>
 
 <details>
-<summary><b>🤖 3. تفعيل Gemini AI في التطبيق</b> — اضغط لعرض الخطوات</summary>
+<summary><b>🤖 3. Enable Google Gemini AI</b> — Click to expand</summary>
 
-1. احصل على مفتاح API مجاني من [Google AI Studio](https://aistudio.google.com/app/apikey).
-2. افتح تطبيق **TaskFlow** في هاتفك أو المحاكي.
-3. توجه إلى **الإعدادات ← مفتاح الذكاء الاصطناعي (AI Key)**.
-4. الصق المفتاح واضغط **حفظ**.
-5. *ملاحظة:* إذا لم تقم بإدخال مفتاح، سيواصل التطبيق العمل بسلاسة عبر **المحرك الذكي المحلي الاحتياطي**.
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+2. Launch **TaskFlow** on your phone or emulator.
+3. Navigate to **Settings → AI API Key**.
+4. Paste your key and tap **Save**.
+5. *Note:* If no key is provided, TaskFlow smoothly continues operating using its **embedded local NLP engine**.
 
 </details>
 
 ---
 
-## 🧪 التحقق والاختبارات الآلية (Automated Verification)
+## 🧪 Automated Verification & Testing
 
-يحتوي المستودع على حزمة اختبارات تكاملية متقدمة تختبر نقاط الـ API وعلاقات الجداول:
+The repository contains an end-to-end integration test suite verifying all database relations, cascade operations, and endpoints:
 
 ```bash
 cd Backend
 python test_backend.py
 ```
 
-نتائج التحقق تشمل:
-- اختبار `GET /` و `GET /health` للتأكد من حالة الخادم.
-- اختبار عمليات الإنشاء والتحديث والحذف للمستخدمين والمهام والتصنيفات.
-- اختبار علاقات 1:N والـ Cascades والتأكد من حذف المهام الفرعية تلقائياً عند حذف المهمة الأب.
+Test coverage includes:
+- `GET /` and `GET /health` server connectivity verification.
+- CRUD lifecycle of users, tasks, subtasks, and categories.
+- Relational foreign key constraints and cascade deletions.
 
 ---
 
-## 💼 دليل المقابلات التقنية (Technical Interview Highlights)
+## 💼 Engineering Highlights & Interview Cheat Sheet
 
-إذا كنت تستعرض هذا المشروع في مقابلة توظيف أو تقييم تقني، فإليك أبرز النقاط المعمارية الجاهزة للمناقشة:
+Key architectural decisions to discuss in technical interviews:
 
-1. **كيف تم حل مشكلة الـ Offline-First؟**
-   - تم استخدام نمط **Repository Pattern** داخل `TaskProvider`؛ حيث يكتب التطبيق فورياً في قاعدة `SQLite` المحلية لضمان عدم توقف واجهة المستخدم، بينما تتولى طبقة `ApiService` إرسال التحديثات لخادم `FastAPI` مع معالجة أخطاء الانقطاع بلباقة عبر `Dio Interceptors`.
-2. **كيف يعمل محرك الـ AI الهجين؟**
-   - في `AiService`، يتم فحص توفر المفتاح والشبكة؛ فإذا كانت متاحة يتم طلب نموذج `Gemini` مع نظام توجيه Prompt يفرض إخراج البيانات بصيغة JSON محددة، وفي حال تعذر الاتصال يتم استخدام محرك محلي يستند إلى قواعد لغوية (Rule-Based & Regex Pattern Matching) لاستخراج العنوان والتصنيف والأولويات وتوليد مهام فرعية قياسية.
-3. **كيف تم التعامل مع الأمان والمصادقة؟**
-   - لا يتم تخزين كلمات المرور كنص صريح مطلقاً، بل تُشفّر عبر `Bcrypt` مع ملح عشوائي (Salt). الجلسات تُدار عبر توكنات `JWT Bearer` منتهية الصلاحية تُحفظ محلياً في `SharedPreferences` وتُحقن في ترويسات الطلبات عبر معترضات شبكية.
-4. **كيف تم تصميم الجداول لمنع البيانات اليتيمة (Orphaned Rows)؟**
-   - تم ربط جدول `subtasks` بجدول `tasks` عبر قيد مفتاح أجنبي مع تفعيل `ondelete="CASCADE"`، مما يضمن حذف أي خطوات فرعية تلقائياً بمجرد حذف المهمة الأصلية.
-
----
-
-## 🗺️ خارطة طريق التطوير (Roadmap)
-
-- [x] ✅ بناء تطبيق محمول متكامل بـ Flutter (12 شاشة).
-- [x] ✅ دعم العربية و RTL مع خط Thmanyah وتصميم Material 3.
-- [x] ✅ أولوية العمل دون إنترنت (Offline-First) عبر SQLite محلياً.
-- [x] ✅ مساعد ذكي ثنائي (Gemini API + Local Rule-Based Engine).
-- [x] ✅ خادم سحابي بـ FastAPI مع PostgreSQL ومصادقة JWT.
-- [x] ✅ إدارة التصنيفات، التذكيرات، والمهام الفرعية.
-- [ ] 📊 لوحة تقارير وإحصائيات الإنتاجية الأسبوعية والشهرية.
-- [ ] 🔄 مزامنة سحابية تلقائية في الخلفية عند عودة الاتصال (Background Sync).
-- [ ] 📌 إضافة ودجت الشاشة الرئيسية (Home Screen Widget) لنظام Android.
-- [ ] 🍏 بناء واختبار نسخة متوافقة لنظام iOS.
-- [ ] 🌐 دعم لغات إضافية وخيار التبديل للإنجليزية في الإعدادات.
+1. **How is Offline-First achieved?**
+   - The application applies a **Repository Pattern** inside `TaskProvider`. All user mutations write immediately to local **SQLite**, ensuring zero UI latency. `ApiService` synchronizes changes with FastAPI in the background using `Dio Interceptors` to gracefully handle network drops without blocking the user.
+2. **How does the Dual-Engine AI work?**
+   - `AiService` evaluates network connectivity and key availability. When online, it sends structured prompts to **Google Gemini** requiring strict JSON output. When offline, it automatically routes through a local rule-based NLP matcher using regex patterns to parse dates, categories, priorities, and standard subtasks.
+3. **How is user data secured?**
+   - Passwords are never stored in plaintext; they are hashed with `Bcrypt` with cryptographic salt. Sessions use stateless `JWT Bearer` tokens with expiration timestamps, stored securely via `SharedPreferences`.
+4. **How are orphaned records prevented?**
+   - The relational schema implements explicit `ondelete="CASCADE"` constraints between `tasks` and `subtasks`, guaranteeing that child items are purged atomically when a parent task is deleted.
 
 ---
 
-## 🤝 المساهمة في المشروع (Contributing)
+## 🗺️ Roadmap
 
-نرحب بكافة المساهمات من مجتمع المطورين! للمساهمة:
-
-1. قم بعمل **Fork** للمستودع.
-2. أنشئ فرعاً لميزتك الجديدة (`git checkout -b feature/AmazingFeature`).
-3. سجّل تغييراتك مع رسالة واضحة (`git commit -m "feat: Add AmazingFeature"`).
-4. ارفع الفرع لمستودعك على GitHub (`git push origin feature/AmazingFeature`).
-5. افتح **Pull Request** للمراجعة والمناقشة.
-
-- 🐛 **للإبلاغ عن مشكلة:** [فتح تذكرة خطأ (Issue)](https://github.com/mohammed-m-alhaj/taskflow/issues)
-- 💡 **لاقتراح ميزة جديدة:** [تقديم طلب ميزة](https://github.com/mohammed-m-alhaj/taskflow/issues/new)
+- [x] ✅ Full Flutter Client (12 production screens).
+- [x] ✅ Full Arabic RTL support with Thmanyah font & Material 3.
+- [x] ✅ Offline-First SQLite local persistence.
+- [x] ✅ Dual-engine AI (Gemini API + Local Rule-based NLP).
+- [x] ✅ FastAPI backend with PostgreSQL and JWT authentication.
+- [x] ✅ Categories, reminders, and subtask management.
+- [ ] 📊 Weekly productivity analytics and progress charts.
+- [ ] 🔄 Background synchronization worker.
+- [ ] 📌 Android Home Screen Widget.
+- [ ] 🍏 iOS deployment and testing.
+- [ ] 🌐 English UI localization toggle in settings.
 
 ---
 
-## 📄 الرخصة (License)
+## 🤝 Contributing
 
-هذا المشروع مرخّص بالكامل تحت **MIT License** — وهو متاح للاستخدام التجاري، التعديل، وإعادة التوزيع بحرية كاملة. لمزيد من التفاصيل راجع ملف [LICENSE](LICENSE).
+Contributions are welcome! To contribute:
+
+1. **Fork** the repository.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m "feat: Add AmazingFeature"`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a **Pull Request**.
+
+- 🐛 **Report a bug:** [Open an Issue](https://github.com/mohammed-m-alhaj/taskflow/issues)
+- 💡 **Request a feature:** [Submit Feature Request](https://github.com/mohammed-m-alhaj/taskflow/issues/new)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — feel free to use, modify, and distribute it. See the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-**إذا أعجبك TaskFlow أو أفادك كمرجع برمجي — لا تتردد في دعمه بنجمة ⭐ على GitHub!**
+**If TaskFlow helped you or serves as a great reference — consider starring ⭐ the repository!**
 
 <br/>
 
 [![GitHub Profile](https://img.shields.io/badge/GitHub-mohammed--m--alhaj-181717?style=for-the-badge&logo=github)](https://github.com/mohammed-m-alhaj)
 &nbsp;
-[![Report Issue](https://img.shields.io/badge/أبلغ_عن_مشكلة-red?style=for-the-badge&logo=github)](https://github.com/mohammed-m-alhaj/taskflow/issues)
+[![Report Issue](https://img.shields.io/badge/Report_Issue-red?style=for-the-badge&logo=github)](https://github.com/mohammed-m-alhaj/taskflow/issues)
 
 <br/>
 
-*صُنع بكل إتقان وشغف ❤️ باستخدام Flutter · FastAPI · PostgreSQL · Google Gemini*
+*Built with passion ❤️ using Flutter · FastAPI · PostgreSQL · Google Gemini*
 
 </div>
