@@ -1,184 +1,266 @@
 ﻿<div align="center">
 
-# ⚡ TaskFlow
-### مدير مهامك الذكي — مجاني وبدون إنترنت
+<img src="screenshots/hero.jpg" alt="TaskFlow — تطبيق إدارة المهام الذكي" width="100%"/>
 
-<br>
+<br/><br/>
 
-[![Download](https://img.shields.io/badge/⬇️%20%20تحميل%20التطبيق-APK%20مجاني-2563EB?style=for-the-badge)](https://github.com/mohammed-m-alhaj/taskflow/releases/latest)
-[![Stars](https://img.shields.io/github/stars/mohammed-m-alhaj/taskflow?style=for-the-badge&color=yellow&label=⭐%20النجوم)](https://github.com/mohammed-m-alhaj/taskflow/stargazers)
+[![Download](https://img.shields.io/badge/⬇️_تحميل_التطبيق-APK_مجاني-2563EB?style=for-the-badge)](https://github.com/mohammed-m-alhaj/taskflow/releases/latest)
+[![Stars](https://img.shields.io/github/stars/mohammed-m-alhaj/taskflow?style=for-the-badge&color=yellow&label=⭐_النجوم)](https://github.com/mohammed-m-alhaj/taskflow/stargazers)
+[![Issues](https://img.shields.io/github/issues/mohammed-m-alhaj/taskflow?style=for-the-badge&color=red&label=المشكلات)](https://github.com/mohammed-m-alhaj/taskflow/issues)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-<br>
+<br/>
 
-> نظّم يومك، تتبّع مهامك، واستخدم الذكاء الاصطناعي لتخطيط كل شيء — كل ذلك من هاتفك
-
-<br>
-
----
+### نظّم يومك — بالعربية — بالذكاء الاصطناعي — بدون إنترنت
 
 </div>
 
-## 📲 تحميل التطبيق
+---
 
-| النسخة | الحجم | الرابط |
-|--------|-------|--------|
-| **الإصدار العادي** — موصى به | ~19 MB | [⬇️ تحميل](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Mobile_Optimized.apk) |
-| **الإصدار الشامل** — لجميع الأجهزة | ~55 MB | [⬇️ تحميل](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Universal.apk) |
+## 📲 تحميل التطبيق — مباشرة
 
-> **ملاحظة:** بعد التحميل اذهب لـ الإعدادات ← الأمان ← السماح بتثبيت تطبيقات من مصادر غير معروفة
+> **أندرويد فقط حالياً | Android 6.0+**
+
+| النسخة | الحجم | متى أستخدمها؟ |
+|--------|-------|----------------|
+| [⬇️ **النسخة الخفيفة** *(موصى بها)*](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Mobile_Optimized.apk) | ~19 MB | لأغلب الهواتف الحديثة |
+| [⬇️ **النسخة الشاملة**](https://github.com/mohammed-m-alhaj/taskflow/releases/download/v1.0.0/TaskFlow_Universal.apk) | ~55 MB | إذا لم تعمل النسخة الخفيفة |
+
+**كيف أثبّت التطبيق؟**
+1. حمّل ملف الـ APK
+2. افتح الملف من مجلد التنزيلات
+3. اضغط **تثبيت** — وإذا ظهرت رسالة تحذير: اذهب إلى **الإعدادات ← الأمان ← السماح بمصادر غير معروفة**
+4. افتح **TaskFlow** وابدأ فوراً 🚀
 
 ---
 
-## ✨ ماذا يقدم لك TaskFlow؟
+## ✨ المميزات — بالصور
 
-<table>
-<tr>
-<td width="50%">
+<img src="screenshots/features.jpg" alt="مميزات TaskFlow الستة الرئيسية" width="100%"/>
 
-### 🤖 مساعد AI مدمج
-اكتب هدفك بالعربية — والتطبيق يحوّله لخطة مهام متكاملة مع مواعيد وأولويات
+<br/>
 
-**مثال:** اكتب *"أذاكر مادة قواعد البيانات"* فيعطيك خطة خطوة بخطوة
+### 🤖 مساعد الذكاء الاصطناعي — النجم الرئيسي
 
-</td>
-<td width="50%">
+اكتب أي هدف بالعربية العامية أو الفصحى — وسيحوّله التطبيق لخطة عمل مفصّلة:
 
-### 📴 يعمل بدون إنترنت
-كل بياناتك محفوظة على هاتفك مباشرة — لا حسابات سحابة، لا انقطاع
+```
+أنت تكتب:  "أذاكر مادة قواعد البيانات للاختبار"
 
-</td>
-</tr>
-<tr>
-<td>
+التطبيق يرد:
+  ✅ مراجعة الفصل الأول — الأحد 3:00 م     [عالية]
+  ✅ حل تمارين الفصل الثاني — الإثنين       [متوسطة]
+  ✅ مراجعة شاملة — يوم قبل الاختبار        [عالية]
+  ✅ نوم مبكر ليلة الاختبار                  [منخفضة]
 
-### 🗂️ تنظيم ذكي
-- مهام وتحتها مهام فرعية
-- أولويات: عالية / متوسطة / منخفضة
-- تصنيفات ملونة تصنعها أنت
-- تكرار تلقائي للمهام اليومية
-
-</td>
-<td>
-
-### 📅 تقويم + تذكيرات
-تصفح مهامك بالتاريخ واضبط تذكيرات لكل مهمة حتى لا يفوتك شيء
-
-</td>
-</tr>
-<tr>
-<td>
-
-### 🌙 وضع ليلي
-ثيم داكن كامل يحمي عينيك في الظلام
-
-</td>
-<td>
-
-### 🔍 بحث فوري
-ابحث في مهامك بالكلمات أو صفّها حسب الحالة والأولوية
-
-</td>
-</tr>
-</table>
-
----
-
-## 📸 لقطات من التطبيق
-
-> *(أضف صور حقيقية للتطبيق هنا — هذا يزيد التحميلات بشكل كبير)*
-
----
-
-## 🚀 كيف أبدأ؟
-
-### التحميل والتثبيت
-1. حمّل الـ APK من الجدول أعلاه
-2. افتح الملف من التنزيلات
-3. اضغط **تثبيت** ← **السماح** إذا طلب الإذن
-4. افتح **TaskFlow** وسجّل حسابك
-
-### استخدام مساعد AI
-1. افتح التطبيق واضغط أيقونة الروبوت 🤖
-2. اكتب ما تريد تحقيقه بالعربية
-3. اضغط **إرسال** — ستحصل على خطة جاهزة
-4. اضغط **أضف للمهام** لحفظها مباشرة
-
-> 💡 **لتجربة AI كاملة:** أدخل [Gemini API Key](https://aistudio.google.com/app/apikey) مجانية من Google في إعدادات التطبيق
-
----
-
-## 🛠️ للمطورين — تشغيل المشروع
-
-<details>
-<summary>اضغط لعرض تعليمات التطوير</summary>
-
-### المتطلبات
-- Flutter 3.x
-- Python 3.9+
-- Android Studio / VS Code
-
-### تشغيل الـ Frontend
-
-```bash
-git clone https://github.com/mohammed-m-alhaj/taskflow.git
-cd taskflow
-flutter pub get
-flutter run
+  [+ أضف هذه المهام مباشرة للتطبيق]
 ```
 
-### تشغيل الـ Backend
+> يعمل بـ **Google Gemini API** (مجاني) — وعند انعدام الاتصال يعمل بمحرك ذكاء محلي داخل التطبيق
+
+---
+
+## 👥 لمن هذا التطبيق؟
+
+| الفئة | كيف يفيدهم TaskFlow؟ |
+|-------|----------------------|
+| 🎓 **الطلاب** | تنظيم جداول المذاكرة والمشاريع مع خطط AI مخصصة |
+| 💼 **الموظفون** | تتبع المهام اليومية وترتيب الأولويات بسهولة |
+| 🏢 **فرق العمل** | كل عضو يدير مهامه المستقلة بشكل منظم |
+| 🏠 **الاستخدام الشخصي** | تذكيرات، مشتريات، أهداف يومية — كل شيء في مكان واحد |
+| 👨‍💻 **المطورون** | مشروع مفتوح المصدر للتعلم والمساهمة |
+
+---
+
+## 🏗️ للشركات والمطورين — المعمارية التقنية
+
+> هذا تطبيق **Full-Stack** مبني بمعايير إنتاجية احترافية
+
+### المكونات
+
+```
+┌─────────────────────────────────────────────────────┐
+│                    📱 Flutter App                   │
+│                                                     │
+│  Screens (12)  →  Providers (5)  →  Services (4)   │
+│                                                     │
+│  • Home          • AuthProvider      • AiService    │
+│  • AI Assistant  • TaskProvider      • ApiService   │
+│  • Calendar      • CategoryProvider  • DbHelper     │
+│  • Tasks         • ReminderProvider  • Storage      │
+│  • Settings      • SettingsProvider                 │
+└──────────────────────┬──────────────────────────────┘
+                       │ REST API (Dio/HTTP)
+                       │
+┌──────────────────────▼──────────────────────────────┐
+│                  ⚙️ FastAPI Backend                 │
+│                                                     │
+│  Routers:  auth · tasks · subtasks                  │
+│            categories · reminders · settings        │
+│                                                     │
+│  Stack: FastAPI + SQLAlchemy + Pydantic + Uvicorn   │
+└─────────────────────────────────────────────────────┘
+```
+
+### التقنيات
+
+| الطبقة | التقنيات |
+|--------|----------|
+| **UI** | Flutter 3 · Dart 3 · Material Design 3 · RTL عربي كامل |
+| **State** | Provider 6 · MultiProvider pattern |
+| **Network** | Dio 5 · RESTful API · JSON serialization |
+| **Local DB** | SQLite (sqflite) — يعمل بدون إنترنت كلياً |
+| **AI** | Google Gemini API + Local fallback engine |
+| **Backend** | FastAPI · SQLAlchemy ORM · Pydantic v2 · Uvicorn |
+| **Auth** | JWT Authentication · Session management |
+| **UX** | Shimmer loading · Dark/Light theme · Arabic font (Thmanyah) |
+
+### هيكل قاعدة البيانات
+
+```sql
+Users           ── حسابات المستخدمين والمصادقة
+Tasks           ── المهام (أولوية، تاريخ، تكرار، حالة)
+Subtasks        ── المهام الفرعية المرتبطة بكل مهمة
+Categories      ── التصنيفات الملونة المخصصة
+Reminders       ── التذكيرات المجدولة
+RecurrenceRules ── قواعد التكرار التلقائي
+CalendarEvents  ── أحداث التقويم
+UserSettings    ── تفضيلات المستخدم (ثيم، إعدادات)
+```
+
+### API Endpoints
+
+| Method | Endpoint | الوصف |
+|--------|----------|-------|
+| `POST` | `/auth/register` | تسجيل حساب جديد |
+| `POST` | `/auth/login` | تسجيل الدخول + JWT |
+| `GET` | `/tasks/` | جلب مهام المستخدم |
+| `POST` | `/tasks/` | إنشاء مهمة جديدة |
+| `PUT` | `/tasks/{id}` | تحديث مهمة |
+| `DELETE` | `/tasks/{id}` | حذف مهمة |
+| `GET/POST` | `/subtasks/` | المهام الفرعية |
+| `GET/POST` | `/categories/` | التصنيفات |
+| `GET/POST` | `/reminders/` | التذكيرات |
+| `GET/PUT` | `/settings/` | إعدادات المستخدم |
+| `GET` | `/health` | فحص حالة الخادم |
+
+---
+
+## 🚀 تشغيل المشروع محلياً
+
+<details>
+<summary><b>📱 Flutter Frontend</b> — اضغط لعرض التعليمات</summary>
+
+**المتطلبات:** Flutter 3.x · Android Studio أو VS Code · جهاز أندرويد أو محاكي
+
+```bash
+# 1. استنسخ المشروع
+git clone https://github.com/mohammed-m-alhaj/taskflow.git
+cd taskflow
+
+# 2. ثبّت الحزم
+flutter pub get
+
+# 3. شغّل على جهاز متصل أو محاكي
+flutter run
+
+# بناء APK
+flutter build apk --release
+# الناتج في: build/app/outputs/flutter-apk/app-release.apk
+```
+
+</details>
+
+<details>
+<summary><b>⚙️ FastAPI Backend</b> — اضغط لعرض التعليمات</summary>
+
+**المتطلبات:** Python 3.9+
 
 ```bash
 cd Backend
+
+# إنشاء بيئة افتراضية
 python -m venv venv
 venv\Scripts\activate        # Windows
 # source venv/bin/activate   # Linux/macOS
 
-pip install fastapi uvicorn sqlalchemy pydantic
-uvicorn app.main:app --reload
+# تثبيت المتطلبات
+pip install fastapi uvicorn sqlalchemy pydantic python-jose passlib
+
+# تشغيل الخادم
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-التوثيق التفاعلي: **http://localhost:8000/docs**
+بعد التشغيل:
+- **API:** `http://localhost:8000`
+- **توثيق Swagger:** `http://localhost:8000/docs`
+- **ReDoc:** `http://localhost:8000/redoc`
 
-### التقنيات المستخدمة
+</details>
 
-**Frontend:** Flutter · Dart · Provider · Dio · SQLite · Shimmer
+<details>
+<summary><b>🤖 تفعيل Gemini AI</b> — اضغط لعرض التعليمات</summary>
 
-**Backend:** FastAPI · SQLAlchemy · Pydantic · Uvicorn
+1. اذهب إلى [aistudio.google.com](https://aistudio.google.com/app/apikey)
+2. أنشئ API Key مجاني
+3. افتح TaskFlow ← **الإعدادات** ← **مفتاح AI**
+4. الصق المفتاح واحفظ
 
-**AI:** Google Gemini API + محرك ذكاء اصطناعي محلي احتياطي
+بدون المفتاح يعمل التطبيق بمحرك ذكاء محلي — لكن مع المفتاح تكون الردود أذكى وأدق.
 
 </details>
 
 ---
 
-## 🗺️ القادم قريباً
+## 🗺️ خارطة الطريق
 
-- [ ] 📊 تقارير إنتاجيتك الأسبوعية
+- [x] ✅ تطبيق Flutter كامل (12 شاشة)
+- [x] ✅ Backend FastAPI مع كامل الـ API
+- [x] ✅ مساعد AI بـ Gemini + محرك محلي احتياطي
+- [x] ✅ دعم كامل للعربية RTL
+- [x] ✅ وضع داكن/فاتح
+- [ ] 📊 تقارير الإنتاجية الأسبوعية
 - [ ] 🔄 مزامنة عبر أجهزة متعددة
-- [ ] 📌 ودجت للشاشة الرئيسية
+- [ ] 📌 Widget للشاشة الرئيسية
 - [ ] 🍎 إصدار iOS
 - [ ] 🌐 واجهة إنجليزية
 
 ---
 
-## 🤝 هل تريد المساهمة؟
+## 🤝 المساهمة في المشروع
 
-كل مساهمة مرحّب بها — سواء كانت إصلاح خطأ أو ميزة جديدة أو حتى تحسين الترجمة.
+المشروع مفتوح المصدر وكل مساهمة مرحّب بها:
 
-1. اعمل **Fork** للمستودع
-2. أنشئ branch جديد: `git checkout -b feature/اسم-الميزة`
-3. Commit تعديلاتك: `git commit -m "feat: وصف التعديل"`
-4. افتح **Pull Request** — وسأراجعه بأسرع وقت
+```bash
+# Fork ← Clone ← Branch ← Commit ← Push ← Pull Request
+git checkout -b feature/اسم-الميزة
+git commit -m "feat: وصف التعديل"
+git push origin feature/اسم-الميزة
+```
+
+- 🐛 **أبلغ عن خطأ** → [فتح Issue](https://github.com/mohammed-m-alhaj/taskflow/issues)
+- 💡 **اقترح ميزة** → [طلب جديد](https://github.com/mohammed-m-alhaj/taskflow/issues/new)
+
+---
+
+## 📄 الرخصة
+
+هذا المشروع مرخّص تحت **MIT License** — يمكنك استخدامه، تعديله، ونشره بحرية كاملة.
 
 ---
 
 <div align="center">
 
-**إذا أفادك TaskFlow — نجمة ⭐ تساعد كثيراً في نشره للناس!**
+**إذا أفادك TaskFlow — نجمة واحدة ⭐ تساعد في وصوله لأشخاص أكثر!**
 
-<br>
+<br/>
 
-صُنع بـ ❤️ · [الإبلاغ عن مشكلة](https://github.com/mohammed-m-alhaj/taskflow/issues) · [طلب ميزة](https://github.com/mohammed-m-alhaj/taskflow/issues/new)
+[![GitHub](https://img.shields.io/badge/GitHub-mohammed--m--alhaj-181717?style=for-the-badge&logo=github)](https://github.com/mohammed-m-alhaj)
+&nbsp;
+[![Issues](https://img.shields.io/badge/أبلغ_عن_مشكلة-red?style=for-the-badge&logo=github)](https://github.com/mohammed-m-alhaj/taskflow/issues)
+
+<br/>
+
+*صُنع بـ ❤️ وكثير من ☕ — Flutter + FastAPI + AI*
 
 </div>
