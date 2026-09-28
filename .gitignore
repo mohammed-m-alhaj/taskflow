@@ -54,3 +54,8 @@ app.*.map.json
 docs/*.pdf
 *.pdf
 
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+

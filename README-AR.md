@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # TaskFlow
 
@@ -11,6 +11,8 @@
 [![GitHub Release](https://img.shields.io/github/v/release/mohammed-m-alhaj/taskflow?include_prereleases&style=flat-square&color=2563EB)](https://github.com/mohammed-m-alhaj/taskflow/releases)
 [![GitHub Stars](https://img.shields.io/github/stars/mohammed-m-alhaj/taskflow?style=flat-square&color=yellow&label=⭐%20النجوم)](https://github.com/mohammed-m-alhaj/taskflow/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![CI](https://github.com/mohammed-m-alhaj/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammed-m-alhaj/taskflow/actions)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](docker-compose.yml)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=flat-square&logo=flutter&logoColor=white)](https://flutter.dev)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org)
@@ -151,7 +153,19 @@
 
 ## 🚀 التشغيل السريع (في 3 دقائق)
 
-### 1. تشغيل خادم الباك إند (FastAPI + PostgreSQL)
+### الخيار (أ): التشغيل عبر Docker (الأسرع والأسهل)
+
+```bash
+docker compose up -d
+```
+> يشغل خادم PostgreSQL 15 وخادم FastAPI معاً فورياً مع فحص الجاهزية التلقائي على `http://localhost:8000`.
+>
+> - **التوثيق التفاعلي (Swagger UI)**: `http://localhost:8000/docs`
+> - **توثيق ReDoc**: `http://localhost:8000/redoc`
+
+### الخيار (ب): التشغيل اليدوي المحلي
+
+#### 1. تشغيل خادم الباك إند (FastAPI + PostgreSQL)
 
 ```bash
 cd Backend
@@ -167,9 +181,6 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 > **الإنشاء التلقائي لقاعدة البيانات**: عند الإقلاع، يتصل الخادم بـ PostgreSQL تلقائياً، وينشئ قاعدة بيانات `taskflow` إن لم تكن موجودة، ويتحقق من كافة الجداول الـ 8!
-> 
-> - **التوثيق التفاعلي (Swagger UI)**: `http://localhost:8000/docs`
-> - **توثيق ReDoc**: `http://localhost:8000/redoc`
 
 ### 2. تشغيل تطبيق الهاتف (Flutter)
 

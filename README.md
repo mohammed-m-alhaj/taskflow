@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # TaskFlow
 
@@ -11,6 +11,8 @@
 [![GitHub Release](https://img.shields.io/github/v/release/mohammed-m-alhaj/taskflow?include_prereleases&style=flat-square&color=2563EB)](https://github.com/mohammed-m-alhaj/taskflow/releases)
 [![GitHub Stars](https://img.shields.io/github/stars/mohammed-m-alhaj/taskflow?style=flat-square&color=yellow&label=⭐%20Stars)](https://github.com/mohammed-m-alhaj/taskflow/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
+[![CI](https://github.com/mohammed-m-alhaj/taskflow/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammed-m-alhaj/taskflow/actions)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](docker-compose.yml)
 [![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=flat-square&logo=flutter&logoColor=white)](https://flutter.dev)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org)
@@ -149,7 +151,19 @@ The backend provides 24 fully validated endpoints with interactive OpenAPI docum
 
 ## 🚀 Quick Start (3 Minutes)
 
-### 1. Run the Backend (FastAPI + PostgreSQL)
+### Option A: Run with Docker (Fastest)
+
+```bash
+docker compose up -d
+```
+> Automatically provisions PostgreSQL 15 and the FastAPI Backend on `http://localhost:8000`.
+>
+> - **Interactive Swagger Docs**: `http://localhost:8000/docs`
+> - **ReDoc Documentation**: `http://localhost:8000/redoc`
+
+### Option B: Run Locally Without Docker
+
+#### 1. Start Backend (FastAPI + PostgreSQL)
 
 ```bash
 cd Backend
@@ -165,9 +179,6 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 > **Smart Database Auto-Init**: On startup, the backend automatically connects to PostgreSQL, creates the `taskflow` database if it doesn't exist, and verifies all 8 relational tables!
-> 
-> - **Interactive Swagger Docs**: `http://localhost:8000/docs`
-> - **ReDoc Documentation**: `http://localhost:8000/redoc`
 
 ### 2. Run the Mobile App (Flutter)
 
