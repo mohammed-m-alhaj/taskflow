@@ -1,0 +1,263 @@
+[
+  {
+    "file_name": "main.dart",
+    "file_path": "lib/main.dart",
+    "category": "نقطة الانطلاق (Entry Point)",
+    "role": "نقطة الانطلاق الرئيسية للتطبيق. يقوم بتهيئة بيئة فلاتر وحقن جميع المزودات (Providers) عبر MultiProvider، وإعداد السمة (Material 3)، واللغة العربية الافتراضية RTL، وشاشة البداية SplashScreen.",
+    "key_items": "main(), runApp(), MultiProvider, MaterialApp, themeMode, ColorScheme.fromSeed, supportedLocales, GlobalMaterialLocalizations.",
+    "doctor_q": "لماذا وضعت MultiProvider في أعلى شجرة الودجتس في main.dart؟",
+    "doctor_a": "لإتاحة كائنات إدارة الحالة (State Management) لكافة شاشات التطبيق كأبناء في شجرة الودجتس، مما يسهل الوصول للبيانات والاشتراك في تحديثاتها من أي مكان عبر context."
+  },
+  {
+    "file_name": "models/task.dart",
+    "file_path": "lib/models/task.dart",
+    "category": "نماذج البيانات (Data Models)",
+    "role": "يمثل كيان المهمة في التطبيق. يحتوي على جميع خصائص المهمة وطرق التحويل من وإلى JSON للتعامل المتوافق مع SQLite وخادم FastAPI، بالإضافة إلى دالة copyWith لتحديث الحالات دون المساس بالأصل.",
+    "key_items": "Task Class, fromJson(), toJson(), toMap(), copyWith(), id, title, description, priority, status, dueDate, isCompleted.",
+    "doctor_q": "ما فائدة دالة copyWith داخل كلاس Task؟",
+    "doctor_a": "تسمح بإنشاء كائن جديد بنسخة مطابقة مع تعديل حقول محددة فقط (مثل تبديل isCompleted)، مما يحقق مبدأ عدم القابلية للتغيير (Immutability) ويمنع الآثار الجانبية غير المرغوبة."
+  },
+  {
+    "file_name": "models/subtask.dart",
+    "file_path": "lib/models/subtask.dart",
+    "category": "نماذج البيانات (Data Models)",
+    "role": "نموذج المهام الفرعية التابعة للمهمة الرئيسية. يربط المهمة الفرعية بمعرف المهمة الأب task_id مع حالة الإنجاز.",
+    "key_items": "Subtask Class, fromJson(), toJson(), copyWith(), id, taskId, title, isCompleted.",
+    "doctor_q": "كيف ترتبط المهمة الفرعية بالمهمة الرئيسية برمجياً؟",
+    "doctor_a": "ترتبط عبر المفتاح الأجنبي taskId (Foreign Key) الذي يشير إلى المعرف الأساسي للمهمة الأم في قاعدة البيانات."
+  },
+  {
+    "file_name": "models/category.dart",
+    "file_path": "lib/models/category.dart",
+    "category": "نماذج البيانات (Data Models)",
+    "role": "نموذج تصنيفات المهام (مثل: العمل، الدراسة، شخصي). يدعم تخزين وحفظ الأيقونة واللون المخصص واسم التصنيف.",
+    "key_items": "Category Class, fromJson(), toJson(), id, name, color, icon.",
+    "doctor_q": "ما هو دور نموذج Category في التطبيق؟",
+    "doctor_a": "تنظيم المهام وتصنيفها منطقياً، وتسهيل فلترة المهام في الشاشة الرئيسية حسب مجالات الحياة المختلفة."
+  },
+  {
+    "file_name": "models/reminder.dart",
+    "file_path": "lib/models/reminder.dart",
+    "category": "نماذج البيانات (Data Models)",
+    "role": "نموذج التذكيرات المجدولة للمهام. يحفظ وقت وتاريخ التنبيه reminderTime وحالة التفعيل isEnabled.",
+    "key_items": "Reminder Class, fromJson(), toJson(), id, taskId, reminderTime, isEnabled.",
+    "doctor_q": "كيف يتعامل الموديل مع التواريخ بين فلاتر وقاعدة البيانات؟",
+    "doctor_a": "يقوم بتحويل كائن DateTime في دارت إلى نص قياسي عالمي بصيغة ISO8601 عند الإرسال، ويعيد تحليله عبر DateTime.parse عند الاستقبال."
+  },
+  {
+    "file_name": "providers/auth_provider.dart",
+    "file_path": "lib/providers/auth_provider.dart",
+    "category": "إدارة الحالة (Providers)",
+    "role": "إدارة جلسة المستخدم والمصادقة بالكامل. يدعم تسجيل الدخول، إنشاء الحساب، التحقق من التوكن JWT، الحفظ في SharedPreferences، وتسجيل الدخول الأوفلاين في حال انقطاع الشبكة.",
+    "key_items": "AuthProvider, login(), register(), logout(), checkAuth(), tryOfflineLogin(), userName, userEmail, token, isAuthenticated.",
+    "doctor_q": "ماذا يحدث في AuthProvider إذا انقطع الإنترنت وحاول المستخدم تسجيل الدخول؟",
+    "doctor_a": "يتحول تلقائياً إلى tryOfflineLogin للتحقق من بيانات الدخول المخزنة محلياً في جدول users بـ SQLite وتفعيل الجلسة المحلية بأمان."
+  },
+  {
+    "file_name": "providers/task_provider.dart",
+    "file_path": "lib/providers/task_provider.dart",
+    "category": "إدارة الحالة (Providers)",
+    "role": "القلب النابض لإدارة المهام. يطبق معمارية التحديث التفاؤلي (Optimistic UI)؛ حيث يقرأ ويحدث بيانات SQLite محلياً خلال 0.001 ثانية، ثم يزامن التغييرات مع السيرفر في الخلفية Background Sync.",
+    "key_items": "TaskProvider, fetchTasks(), createTaskAndReturn(), updateTask(), deleteTask(), totalTasks, completedTasks, overdueTasks.",
+    "doctor_q": "ما هو الـ Optimistic UI المطبق في TaskProvider؟",
+    "doctor_a": "هو تحديث واجهة المستخدم فوراً وإشعار الشاشات عبر notifyListeners وحفظ المهمة محلياً قبل انتظار استجابة السيرفر، لضمان استجابة فورية بدون لودينغ."
+  },
+  {
+    "file_name": "providers/category_provider.dart",
+    "file_path": "lib/providers/category_provider.dart",
+    "category": "إدارة الحالة (Providers)",
+    "role": "إدارة التصنيفات وإتاحتها لكامل التطبيق مع دعم الإضافة والحذف والمزامنة المحلية والسحابية.",
+    "key_items": "CategoryProvider, fetchCategories(), addCategory(), deleteCategory(), categories, isLoading.",
+    "doctor_q": "لماذا تفصل التصنيفات في CategoryProvider مستقل بدلاً من وضعها داخل TaskProvider؟",
+    "doctor_a": "تطبيقاً لمبدأ المسؤولية الواحدة (Single Responsibility Principle - SRP) لتسهيل الصيانة وتقليل استدعاءات إعادة الرسم غير الضرورية."
+  },
+  {
+    "file_name": "providers/reminder_provider.dart",
+    "file_path": "lib/providers/reminder_provider.dart",
+    "category": "إدارة الحالة (Providers)",
+    "role": "إدارة قائمة التذكيرات المجدولة، وجدولتها محلياً وتحديثها من الخادم وحذفها.",
+    "key_items": "ReminderProvider, fetchAllReminders(), addReminder(), deleteReminder(), reminders.",
+    "doctor_q": "أين تُعرض بيانات هذا المزود؟",
+    "doctor_a": "في شاشة التنبيهات والإشعارات (NotificationsScreen) كقسم مخصص للتذكيرات المجدولة المنبهة."
+  },
+  {
+    "file_name": "providers/settings_provider.dart",
+    "file_path": "lib/providers/settings_provider.dart",
+    "category": "إدارة الحالة (Providers)",
+    "role": "إدارة تفضيلات المستخدم وإعدادات المظهر (الوضع الليلي والنهاري)، وحفظ الخيارات في التخزين المحلي الدائم.",
+    "key_items": "SettingsProvider, themeMode, toggleTheme(), notificationsEnabled, loadSettings().",
+    "doctor_q": "كيف يتغير ثيم التطبيق بالكامل عند تغيير themeMode؟",
+    "doctor_a": "لأن MaterialApp في main.dart يستمع لهذا المزود عبر Consumer، فعند استدعاء notifyListeners يعاد رسم شجرة الواجهات بالثيم الجديد فوراً."
+  },
+  {
+    "file_name": "services/api_service.dart",
+    "file_path": "lib/services/api_service.dart",
+    "category": "طبقة الشبكة والخدمات (Services)",
+    "role": "محرك الشبكة المعتمد على مكتبة Dio ونمط Singleton. يحتوي على معترضات (Interceptors) لحقن التوكن وقاطع دائرة (Circuit Breaker) لإيقاف الطلبات 30 ثانية عند سقوط السيرفر وحل IP الأندرويد 10.0.2.2.",
+    "key_items": "ApiService, Dio, InterceptorsWrapper, Circuit Breaker, defaultBaseUrl, setToken(), hasToken, CRUD Endpoints.",
+    "doctor_q": "لماذا عنوان السيرفر في الأندرويد هو 10.0.2.2 وليس 127.0.0.1؟",
+    "doctor_a": "لأن محاكي الأندرويد آلة افتراضية معزولة يعتبر 127.0.0.1 هو نفسه، وقد خصصت جوجل 10.0.2.2 كعنوان افتراضي للوصول إلى سيرفر الكمبيوتر المضيف."
+  },
+  {
+    "file_name": "services/database_helper.dart",
+    "file_path": "lib/services/database_helper.dart",
+    "category": "طبقة الشبكة والخدمات (Services)",
+    "role": "محرك قاعدة البيانات المحلية المدمجة (SQLite عبر sqflite). ينشئ الجداول الستة (users, categories, tasks, subtasks, reminders, user_settings) ويدير القراءة والكتابة دون اتصال بالإنترنت.",
+    "key_items": "DatabaseHelper, sqflite, _initDB(), _createDB(), getTasks(), insertTask(), updateTask(), deleteTask().",
+    "doctor_q": "ما هو الهدف المعماري من وجود DatabaseHelper مع وجود خادم وسيرفر؟",
+    "doctor_a": "تحقيق مبدأ Offline-First؛ التطبيق يظل سريعاً ويعمل بكفاءة كاملة حتى في الصحراء أو حال انقطاع الشبكة بدون أي توقف."
+  },
+  {
+    "file_name": "services/storage_service.dart",
+    "file_path": "lib/services/storage_service.dart",
+    "category": "طبقة الشبكة والخدمات (Services)",
+    "role": "إدارة التخزين الخفيف المفتاحي (Key-Value) عبر SharedPreferences لحفظ التوكن واسم المستخدم والبريد والإعدادات.",
+    "key_items": "StorageService, SharedPreferences, saveToken(), getToken(), clearAll().",
+    "doctor_q": "ما الفرق بين SharedPreferences و SQLite في تطبيقك؟",
+    "doctor_a": "SharedPreferences مخصصة للبيانات البسيطة كالمفاتيح والتوكن (Key-Value)، بينما SQLite قاعدة بيانات علائقية متكاملة تدعم الاستعلامات والجداول المعقدة للمهام والتصنيفات."
+  },
+  {
+    "file_name": "services/ai_service.dart",
+    "file_path": "lib/services/ai_service.dart",
+    "category": "طبقة الشبكة والخدمات (Services)",
+    "role": "خدمة الذكاء الاصطناعي المسؤولة عن تحليل أهداف المستخدم وتوليد مهام ذكية مقسمة وخطط عمل مقترحة.",
+    "key_items": "AiService, generateTasksFromPrompt(), parseAiResponse().",
+    "doctor_q": "كيف يتكامل مساعد الذكاء الاصطناعي مع التطبيق؟",
+    "doctor_a": "يستقبل الهدف أو الفكرة من المستخدم ويقوم بتحليلها وصياغتها في شكل مهام ذات أولوية وتاريخ وإضافتها لقائمة المهام بضغطة زر."
+  },
+  {
+    "file_name": "screens/splash_screen.dart",
+    "file_path": "lib/screens/splash_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة البداية والترحيب الأنيقة بأنيميشن التلاشي والتكبير، وتقوم بفحص التوكن وتوجيه المستخدم إما للشاشة الرئيسية أو لشاشة تسجيل الدخول.",
+    "key_items": "SplashScreen, AnimationController, FadeTransition, ScaleTransition, checkAuth(), Navigator.pushReplacement.",
+    "doctor_q": "لماذا استخدمت pushReplacement بعد انتهاء شاشة البداية؟",
+    "doctor_a": "حتى يتم استبدال شاشة البداية بالشاشة التالية وتدميرها من الـ Navigation Stack، فلا يمكن للمستخدم العودة لشاشة الـ Splash بالضغط على زر الرجوع."
+  },
+  {
+    "file_name": "screens/home_screen.dart",
+    "file_path": "lib/screens/home_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "الشاشة الرئيسية للتطبيق؛ تضم بطاقة الترحيب ونسبة الإنجاز الذكية، وحقل البحث اللحظي، والبطاقات الإحصائية الأربع التفاعلية، وشرائح الفلترة وقائمة المهام التفاعلية.",
+    "key_items": "HomeScreen, _filterTasks(), AppHeaderCard, AppStatCard, AppChoiceChip, AppTaskCard, FloatingActionButton.",
+    "doctor_q": "كيف تعمل خوارزمية الفلترة في HomeScreen؟",
+    "doctor_a": "تطبق فلترين متتاليين في الذاكرة عبر دالة where: الأول يتحقق من نص البحث في العنوان والوصف، والثاني يطابق الفلتر المختار (مكتملة، قيد التنفيذ، متأخرة، أو الكل)."
+  },
+  {
+    "file_name": "screens/task_detail_screen.dart",
+    "file_path": "lib/screens/task_detail_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة تفاصيل المهمة الكاملة؛ تعرض الوصف، الأولوية، تاريخ الاستحقاق، وإدارة المهام الفرعية مع إمكانية إضافة مهمة فرعية وتعديل وحذف المهمة.",
+    "key_items": "TaskDetailScreen, task, fetchSubtasks(), addSubtask(), toggleSubtask(), deleteSubtask().",
+    "doctor_q": "كيف تم تمرير بيانات المهمة إلى هذه الشاشة؟",
+    "doctor_a": "تم تمريرها عبر منشئ الكلاس (Constructor Injection) كمعامل task: TaskDetailScreen(task: selectedTask)."
+  },
+  {
+    "file_name": "screens/add_task_screen.dart",
+    "file_path": "lib/screens/add_task_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة إضافة وتعديل المهام؛ تضم حقول العنوان والوصف، ومنتقي التاريخ والوقت (DatePicker & TimePicker)، واختيار الأولوية والتصنيف.",
+    "key_items": "AddTaskScreen, showDatePicker, showTimePicker, createTaskAndReturn(), Form, validator.",
+    "doctor_q": "كيف تضمن عدم إدخال مهمة بدون عنوان؟",
+    "doctor_a": "باستخدام خاصية validator داخل حقل الإدخال مع FormKey، حيث يُرفض الحفظ وتظهر رسالة تحذيرية إذا كان الحقل فارغاً."
+  },
+  {
+    "file_name": "screens/calendar_screen.dart",
+    "file_path": "lib/screens/calendar_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة التقويم الشهري التفاعلي؛ تتيح استعراض المهام المجدولة بحسب الأيام مع وضع علامات وإبراز للأيام التي تحوي مواعيد نهائية.",
+    "key_items": "CalendarScreen, TableCalendar, focusedDay, selectedDay, onDaySelected.",
+    "doctor_q": "ما الفائدة الوظيفية لشاشة التقويم؟",
+    "doctor_a": "إعطاء المستخدم رؤية زمنية واضحة (Timeline / Calendar View) للمهام المستقبلية والمواعيد النهائية لتجنب التأخير."
+  },
+  {
+    "file_name": "screens/categories_screen.dart",
+    "file_path": "lib/screens/categories_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة إدارة التصنيفات؛ تتيح إضافة تصنيف جديد عبر نافذة منبثقة، واستعراض قائمة التصنيفات، وتأكيد الحذف الوقائي.",
+    "key_items": "CategoriesScreen, _showAddCategoryDialog(), _confirmDeleteCategory(), ListView.builder.",
+    "doctor_q": "لماذا تستخدم AlertDialog قبل حذف التصنيف؟",
+    "doctor_a": "لتطبيق مبدأ Poka-Yoke لمنع فقدان البيانات العرضي؛ فلا يتم الحذف إلا بعد تأكيد صريح من المستخدم."
+  },
+  {
+    "file_name": "screens/notifications_screen.dart",
+    "file_path": "lib/screens/notifications_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة التنبيهات الذكية؛ تصنف المهام زمنياً إلى (تذكيرات مجدولة 🔔، متأخرة ⚠️، مستحقة اليوم 🔔، وقادمة 📅) مع إمكانية حذف التذكير أو فتح المهمة.",
+    "key_items": "NotificationsScreen, overdueTasks, todayTasks, upcomingTasks, disabledBanner, DateFormat.",
+    "doctor_q": "كيف يتم تصنيف المهام المتأخرة في هذه الشاشة؟",
+    "doctor_a": "بمقارنة تاريخ الاستحقاق مع اللحظة الحالية DateTime.now() بشرط أن تكون المهمة غير مكتملة dueDate.isBefore(now)."
+  },
+  {
+    "file_name": "screens/ai_assistant_screen.dart",
+    "file_path": "lib/screens/ai_assistant_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "واجهة مساعد الذكاء الاصطناعي التفاعلية؛ يستقبل طلبات المستخدم (مثل: خطة للاستعداد للاختبارات) ويقوم بتوليد مهام متسلسلة وإضافتها بضغطة زر.",
+    "key_items": "AiAssistantScreen, TextEditingController, AiService, addGeneratedTasks().",
+    "doctor_q": "ما القيمة المضافة لمساعد الذكاء الاصطناعي في تطبيق مهام؟",
+    "doctor_a": "تحويل الأفكار الكبيرة غير المنظمة إلى مهام تنفيذية صغيرة قابلة للإنجاز والمتابعة بشكل آلي وسريع."
+  },
+  {
+    "file_name": "screens/profile_screen.dart",
+    "file_path": "lib/screens/profile_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة الملف الشخصي؛ تعرض بيانات المستخدم، الأفاتار المولد من الحرف الأول، إحصائيات الإنجاز بالأرقام الملونة، شريط التقدم، وأزرار الإعدادات وتسجيل الخروج.",
+    "key_items": "ProfileScreen, AppHeaderCard, CircleAvatar, _buildStatColumn, LinearProgressIndicator, _logout().",
+    "doctor_q": "لماذا تم بناء ProfileScreen كـ StatelessWidget؟",
+    "doctor_a": "لأنها تدار مركزياً عبر Provider وتستمع للبيانات الحية عبر context.watch دون الحاجة لحالة محلية مستقلة."
+  },
+  {
+    "file_name": "screens/settings_screen.dart",
+    "file_path": "lib/screens/settings_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة الإعدادات العامة؛ للتحكم في المظهر (نهاري/ليلي)، تفعيل وتعطيل الإشعارات، وتوفير معلومات عن إصدار التطبيق وحقوق المطور.",
+    "key_items": "SettingsScreen, SettingsProvider, SwitchListTile, themeMode, toggleNotifications().",
+    "doctor_q": "أين يتم حفظ خيارات الإعدادات عند تبديلها؟",
+    "doctor_a": "يتم حفظها في SharedPreferences وجدول user_settings لتبقى محفوظة حتى بعد إغلاق التطبيق وإعادة فتحه."
+  },
+  {
+    "file_name": "screens/login_screen.dart",
+    "file_path": "lib/screens/login_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة تسجيل الدخول؛ تدعم التحقق من صحة الإيميل وكلمة المرور، وإمكانية إظهار/إخفاء الرمز، وخيار تسجيل الدخول الأوفلاين، والانتقال للتسجيل الجديد.",
+    "key_items": "LoginScreen, _formKey, AppTextField, AppButton, login(), tryOfflineLogin().",
+    "doctor_q": "ما وظيفة زر الدخول المحلي بدون اتصال في LoginScreen؟",
+    "doctor_a": "يتيح للمستخدم الاستمرار في استخدام التطبيق والوصول لمهامه المحلية عندما لا يتوفر إنترنت أو يكون السيرفر مغلقاً."
+  },
+  {
+    "file_name": "screens/register_screen.dart",
+    "file_path": "lib/screens/register_screen.dart",
+    "category": "شاشات التطبيق (Screens)",
+    "role": "شاشة إنشاء حساب جديد؛ تشتمل على 4 حقول إدخال مؤمنة مع التحقق من تطابق كلمتي المرور وصحة الإيميل والحد الأدنى للطول.",
+    "key_items": "RegisterScreen, _formKey, AppTextField, validator, register(), ConstrainedBox.",
+    "doctor_q": "لماذا استخدمت ConstrainedBox(maxWidth: 420) في هذه الشاشة؟",
+    "doctor_a": "لضمان التصميم المتجاوب (Responsive UI) حتى لا يتمدد النموذج بشكل غير مريح على الشاشات الكبيرة كالتابلت والويب."
+  },
+  {
+    "file_name": "widgets/app_badge.dart",
+    "file_path": "lib/widgets/app_badge.dart",
+    "category": "المكونات والودجتس المشتركة (Widgets)",
+    "role": "مكتبة الودجتس المخصصة القابلة لإعادة الاستخدام في التطبيق؛ تحوي PriorityBadge, StatusBadge, AppChoiceChip, AppTextField, AppButton, AppHeaderCard, AppStatCard, AppTaskCard, AppActionTile.",
+    "key_items": "PriorityBadge, StatusBadge, AppChoiceChip, AppTextField, AppButton, AppHeaderCard, AppStatCard, AppTaskCard, AppActionTile.",
+    "doctor_q": "ما الفائدة الهندسية من تجميع هذه الودجتس في ملف موحد؟",
+    "doctor_a": "توحيد لغة التصميم (Design System)، وتطبيق مبدأ DRY (Don't Repeat Yourself) وتسهيل تعديل الأنماط مستقبلاً من مكان واحد."
+  },
+  {
+    "file_name": "widgets/app_drawer.dart",
+    "file_path": "lib/widgets/app_drawer.dart",
+    "category": "المكونات والودجتس المشتركة (Widgets)",
+    "role": "القائمة الجانبية المنزلقة؛ تعرض تدرجاً لونياً جذاباً مع معلومات المستخدم وشارة الاتصال، وعناصر الانتقال الملونة وتمييز الشاشة الحالية وزر تسجيل الخروج.",
+    "key_items": "AppDrawer, currentRoute, LinearGradient, _drawerItem, _confirmLogout(), Navigator.pop().",
+    "doctor_q": "لماذا نغلق القائمة بـ Navigator.pop قبل فتح شاشة جديدة؟",
+    "doctor_a": "حتى لا تظل القائمة الجانبية مفتوحة في الخلفية، بحيث عندما يضغط المستخدم زر الرجوع يعود للصفحة السابقة مباشرة."
+  },
+  {
+    "file_name": "widgets/app_shimmer.dart",
+    "file_path": "lib/widgets/app_shimmer.dart",
+    "category": "المكونات والودجتس المشتركة (Widgets)",
+    "role": "ودجت تأثير الوميض الحركي (Shimmer Effect) أثناء تحميل البيانات لإعطاء تجربة مستخدم عصرية وسلسة.",
+    "key_items": "ShimmerTaskList, ShimmerCard, count, Skeleton Loading.",
+    "doctor_q": "لماذا نفضل الـ Shimmer على مؤشر التحميل الدائري التقليدي؟",
+    "doctor_a": "لأنه يمنح المستخدم تصميماً هيكلياً متوقعاً للبيانات (Skeleton Screen) مما يعطي شعوراً نفسياً بسرعة وسلاسة التطبيق."
+  }
+]
